@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./generated_images:/app/generated_images
+    environment:
+      - REPLICATE_API_TOKEN=${REPLICATE_API_TOKEN}
+    env_file:
+      - .env
